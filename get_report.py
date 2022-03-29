@@ -171,28 +171,49 @@ while start_date <= end_date:
     cell_1.value = date
     cell_2.value = bd_registered_ecook
     cell_3.value = bd_active_ecook
-    cell_4.value = "{:.2f}".format((bd_active_ecook / bd_registered_ecook) * 100) + "%"
+    if bd_registered_ecook == 0:
+        cell_4.value = "0.00%"
+    else:
+        cell_4.value = "{:.2f}".format((bd_active_ecook / bd_registered_ecook) * 100) + "%"
     cell_5.value = cam_registered_ecook
     cell_6.value = cam_active_ecook
-    cell_7.value = "{:.2f}".format((cam_active_ecook / cam_registered_ecook) * 100) + "%"
+    if cam_registered_ecook == 0:
+        cell_7.value = "0.00%"
+    else:
+        cell_7.value = "{:.2f}".format((cam_active_ecook / cam_registered_ecook) * 100) + "%"
     cell_8.value = double_v1_2000_registered_ecook
     cell_9.value = double_v1_2000_active_ecook
-    cell_10.value = "{:.2f}".format((double_v1_2000_active_ecook / double_v1_2000_registered_ecook) * 100) + "%"
+    if double_v1_2000_registered_ecook == 0:
+        cell_10.value = "0.00%"
+    else:
+        cell_10.value = "{:.2f}".format((double_v1_2000_active_ecook / double_v1_2000_registered_ecook) * 100) + "%"
     cell_11.value = double_v2_2000_registered_ecook
     cell_12.value = double_v2_2000_active_ecook
-    cell_13.value = "{:.2f}".format((double_v2_2000_active_ecook / double_v2_2000_registered_ecook) * 100) + "%"
+    if double_v2_2000_registered_ecook == 0:
+        cell_13.value = "0.00%"
+    else:
+        cell_13.value = "{:.2f}".format((double_v2_2000_active_ecook / double_v2_2000_registered_ecook) * 100) + "%"
     cell_14.value = single_v1_2000_registered_ecook
     cell_15.value = single_v1_2000_active_ecook
-    cell_16.value = "{:.2f}".format((single_v1_2000_active_ecook / single_v1_2000_registered_ecook) * 100) + "%"
+    if single_v1_2000_registered_ecook == 0:
+        cell_16.value = "0.00%"
+    else:
+        cell_16.value = "{:.2f}".format((single_v1_2000_active_ecook / single_v1_2000_registered_ecook) * 100) + "%"
     cell_17.value = single_v1_1600_registered_ecook
     cell_18.value = single_v1_1600_active_ecook
-    cell_19.value = "{:.2f}".format((single_v1_1600_active_ecook / single_v1_1600_registered_ecook) * 100) + "%"
+    if single_v1_1600_registered_ecook == 0:
+        cell_19.value = "0.00%"
+    else:
+        cell_19.value = "{:.2f}".format((single_v1_1600_active_ecook / single_v1_1600_registered_ecook) * 100) + "%"
     cell_20.value = total_registered_ecook
     cell_21.value = total_active_ecook
-    cell_22.value = "{:.2f}".format((total_active_ecook / total_registered_ecook) * 100) + "%"
+    if total_registered_ecook == 0:
+        cell_22.value = "0.00%"
+    else:
+        cell_22.value = "{:.2f}".format((total_active_ecook / total_registered_ecook) * 100) + "%"
 
     start_date += delta
     row_counter += 1
-    print(f"{date} :: {bd_registered_ecook} :: {bd_active_ecook} :: {cam_registered_ecook} :: {cam_active_ecook} :: {double_v1_2000_registered_ecook} :: {double_v1_2000_active_ecook} :: {single_v1_1600_registered_ecook} :: {single_v1_1600_active_ecook} :: {single_v1_2000_registered_ecook} :: {single_v1_2000_active_ecook} :: {double_v2_2000_registered_ecook} :: {double_v2_2000_active_ecook}")
+    print(f"{date} :: {bd_registered_ecook} :: {bd_active_ecook} :: {cam_registered_ecook} :: {cam_active_ecook} :: {double_v1_2000_registered_ecook} :: {double_v1_2000_active_ecook} :: {single_v1_1600_registered_ecook} :: {single_v1_1600_active_ecook} :: {single_v1_2000_registered_ecook} :: {single_v1_2000_active_ecook} :: {double_v2_2000_registered_ecook} :: {double_v2_2000_active_ecook} :: {total_registered_ecook} :: {total_active_ecook}")
 
 wb.save(filename)
